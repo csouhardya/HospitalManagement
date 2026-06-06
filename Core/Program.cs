@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<HospitalDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddScoped<DapperContext>();
 builder.Services.AddScoped<LegacySqlHelper>();
@@ -55,11 +55,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+app.UseRouting();
 
 app.UseCors("AllowAll");
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseMiddleware<RequestLoggingMiddleware>();
 

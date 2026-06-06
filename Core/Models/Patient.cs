@@ -8,7 +8,7 @@
         public string Gender { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
-        public string InsuranceNumber { get; set; }
+        public string? InsuranceNumber { get; set; }
         public bool IsEmergency { get; set; }
         public bool IsDeleted { get; set; }
         public decimal OutstandingAmount { get; set; }
