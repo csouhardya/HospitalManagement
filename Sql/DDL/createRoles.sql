@@ -1,0 +1,5 @@
+CREATE TABLE Roles
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Name NVARCHAR(50)
+);
