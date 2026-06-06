@@ -1,0 +1,42 @@
+<div class="page">
+  <h1 class="page-title">Patient Details</h1>
+
+  <div *ngIf="patient" class="details-card">
+    <div class="profile-header">
+      <div class="avatar">
+        {{patient.name?.charAt(0)}}
+      </div>
+
+      <div>
+        <h2>{{patient.name}}</h2>
+        <span class="badge">Patient</span>
+      </div>
+    </div>
+
+    <div class="details-grid">
+      <div>
+        <label>Mobile</label>
+        <p>{{patient.mobile}}</p>
+      </div>
+
+      <div>
+        <label>Email</label>
+        <p>{{patient.email}}</p>
+      </div>
+
+      <div>
+        <label>Date of Birth</label>
+        <p>{{patient.dateOfBirth}}</p>
+      </div>
+
+      <div>
+        <label>Outstanding Amount</label>
+        <p>{{patient.outstandingAmount}}</p>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <a routerLink="/patients" class="back-link">← Back to Patients</a>
+    </div>
+  </div>
+</div>

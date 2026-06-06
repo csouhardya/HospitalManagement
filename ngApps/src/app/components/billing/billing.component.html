@@ -1,0 +1,66 @@
+<div class="page">
+  <h1 class="page-title">Billing</h1>
+
+  <div class="billing-layout">
+    <div class="card">
+      <h3>Bill Information</h3>
+
+      <div class="form-group">
+        <label>Patient Id</label>
+        <input placeholder="Patient Id" [(ngModel)]="bill.patientId" name="patientId">
+      </div>
+
+      <div class="form-group">
+        <label>Discount</label>
+        <input placeholder="Discount" type="number" [(ngModel)]="bill.discountAmount" name="discount">
+      </div>
+
+      <h3>Add Item</h3>
+
+      <div class="form-group">
+        <label>Item Name</label>
+        <input placeholder="Item" [(ngModel)]="item.itemName" name="itemName">
+      </div>
+
+      <div class="form-grid small-grid">
+        <div class="form-group">
+          <label>Quantity</label>
+          <input placeholder="Qty" type="number" [(ngModel)]="item.quantity" name="quantity">
+        </div>
+
+        <div class="form-group">
+          <label>Rate</label>
+          <input placeholder="Rate" type="number" [(ngModel)]="item.rate" name="rate">
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button type="button" (click)="addItem()">Add Item</button>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h3>Bill Items</h3>
+
+      <div *ngFor="let i of bill.items" class="bill-item">
+        <div>
+          <strong>{{i.itemName}}</strong>
+          <p>Qty: {{i.quantity}} × Rate: {{i.rate}}</p>
+        </div>
+
+        <span>{{i.quantity * i.rate}}</span>
+      </div>
+
+      <div *ngIf="bill.items.length === 0" class="empty-state">
+        No items added yet.
+      </div>
+
+      <div class="total-box">
+        <span>Total   </span>
+        <strong>{{total()}}</strong>
+      </div>
+      <br>
+      <button type="button" class="save-bill" (click)="save()">Save Bill</button>
+    </div>
+  </div>
+</div>

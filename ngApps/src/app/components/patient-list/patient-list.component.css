@@ -1,0 +1,63 @@
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.subtitle {
+  margin: -10px 0 0;
+  color: #64748b;
+}
+
+.create-link {
+  background: #2563eb;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.create-link:hover {
+  background: #1d4ed8;
+}
+
+.search-card {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.search-card input {
+  flex: 1;
+}
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.table-actions a {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.table-actions button {
+  padding: 8px 12px;
+}
+
+@media (max-width: 700px) {
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .search-card {
+    flex-direction: column;
+  }
+}

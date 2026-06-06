@@ -1,0 +1,27 @@
+<div class="page">
+  <h1 class="page-title">Dashboard</h1>
+
+  <div *ngIf="data" class="dashboard-grid">
+    <div class="stat-card blue">
+      <p>Total Patients</p>
+      <h2>{{data.totalPatients}}</h2>
+    </div>
+
+    <div class="stat-card green">
+      <p>Total Appointments</p>
+      <h2>{{data.totalAppointments}}</h2>
+    </div>
+
+    <div class="stat-card purple">
+      <p>Revenue</p>
+      <h2>{{data.revenue}}</h2>
+    </div>
+  </div>
+
+  <div class="card dashboard-panel">
+    <h3>Hospital Overview</h3>
+    <p>
+      Monitor patient registrations, appointment activity, and billing summary from one place.
+    </p>
+  </div>
+</div>

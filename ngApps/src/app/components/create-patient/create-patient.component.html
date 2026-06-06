@@ -1,0 +1,53 @@
+<div class="page">
+  <h1 class="page-title">Create Patient</h1>
+
+  <div class="card">
+    <form>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Name</label>
+          <input name="name" [(ngModel)]="patient.name" placeholder="Patient full name">
+        </div>
+
+        <div class="form-group">
+          <label>Date Of Birth</label>
+          <input name="dob" type="date" [(ngModel)]="patient.dateOfBirth">
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <select name="gender" [(ngModel)]="patient.gender">
+            <option value="">Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile</label>
+          <input name="mobile" [(ngModel)]="patient.mobile" placeholder="Mobile number">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input name="email" [(ngModel)]="patient.email" placeholder="Email address">
+        </div>
+
+        <div class="form-group">
+          <label>Insurance Number</label>
+          <input name="insurance" [(ngModel)]="patient.insuranceNumber" placeholder="Insurance number">
+        </div>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" name="emergency" [(ngModel)]="patient.isEmergency">
+        Emergency Patient
+      </label>
+
+      <div class="action-row">
+        <button type="button" (click)="save()">Save Patient</button>
+        <a routerLink="/patients" class="cancel-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

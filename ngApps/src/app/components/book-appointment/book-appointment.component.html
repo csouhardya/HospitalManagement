@@ -1,0 +1,33 @@
+<div class="page">
+  <h1 class="page-title">Book Appointment</h1>
+
+  <div class="card">
+    <form>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Patient Id</label>
+          <input placeholder="Patient Id" [(ngModel)]="model.patientId" name="patientId">
+        </div>
+
+        <div class="form-group">
+          <label>Doctor Id</label>
+          <input placeholder="Doctor Id" [(ngModel)]="model.doctorId" name="doctorId">
+        </div>
+
+        <div class="form-group">
+          <label>Appointment Slot</label>
+          <input type="datetime-local" [(ngModel)]="model.slot" name="slot">
+        </div>
+
+        <div class="form-group">
+          <label>Reason</label>
+          <input placeholder="Reason" [(ngModel)]="model.reason" name="reason">
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button type="button" (click)="book()">Book Appointment</button>
+      </div>
+    </form>
+  </div>
+</div>

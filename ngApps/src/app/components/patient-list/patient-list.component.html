@@ -1,0 +1,46 @@
+<div class="page">
+  <div class="list-header">
+    <div>
+      <h1 class="page-title">Patients</h1>
+      <p class="subtitle">Search, view, and manage hospital patients</p>
+    </div>
+
+    <a routerLink="/patients/create" class="create-link">+ Create Patient</a>
+  </div>
+
+  <div class="card search-card">
+    <input [(ngModel)]="searchText" name="searchText" placeholder="Search by name, mobile, or email">
+    <button (click)="search()">Search</button>
+  </div>
+
+  <div *ngIf="loading" class="empty-state">Loading patients...</div>
+
+  <div class="table-wrapper" *ngIf="!loading">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+
+      <tr *ngFor="let p of filteredPatients">
+        <td>
+          <strong>{{p.name}}</strong>
+        </td>
+        <td>{{p.mobile}}</td>
+        <td>{{p.email}}</td>
+        <td>
+          <div class="table-actions">
+            <a [routerLink]="['/patients', p.id]">View</a>
+            <button class="danger" (click)="deletePatient(p.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div *ngIf="filteredPatients.length === 0" class="empty-state">
+      No patients found.
+    </div>
+  </div>
+</div>
